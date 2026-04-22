@@ -1,3 +1,6 @@
+## Project Structure
+
+```
 DCPNet/
 ├── configs/                 # experiment configurations
 ├── deepmist/
@@ -9,3 +12,4 @@ DCPNet/
 ├── NATTEN-0.14.6/           # NATTEN package
 ├── results/                 # saved outputs
 └── train.py                 # training script
+```
