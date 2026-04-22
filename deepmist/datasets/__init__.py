@@ -8,11 +8,7 @@ from prefetch_generator import BackgroundGenerator
 def build_dataset(dataset_cfg, mode='train'):
     dataset_cfg = deepcopy(dataset_cfg)
     dataset_name = dataset_cfg.pop('name')
-    if dataset_name == 'MIST':
-        train_dataset = MISTDataset(**dataset_cfg, split='train')
-        val_dataset = MISTDataset(**dataset_cfg, split='val_all')
-        val_hard_dataset = MISTDataset(**dataset_cfg, split='val_hard')
-    elif dataset_name == 'NUDT-MIRSDT':
+    if dataset_name == 'NUDT-MIRSDT':
         train_dataset = NUDTMIRSDTDataset.TrainDataset(dataset_cfg)
         val_dataset = NUDTMIRSDTDataset.ValDataset(dataset_cfg, split='all')
         val_hard_dataset = NUDTMIRSDTDataset.ValDataset(dataset_cfg, split='lSCR')

@@ -53,10 +53,6 @@ def choose_loss(sub_loss_cfg):
         criterion = BceLoss(**sub_loss_cfg)
     elif loss_type == 'L1Loss':
         criterion = L1Loss(**sub_loss_cfg)
-    elif loss_type == 'IBLoss':
-        criterion = IBLoss(**sub_loss_cfg)
-    elif loss_type == 'EdgeLoss':
-        criterion = EdgeLoss(**sub_loss_cfg)
     elif loss_type == 'SLSIoULoss':
         criterion = SLSIoULoss(**sub_loss_cfg)
     elif loss_type == 'SDMLoss':
@@ -66,5 +62,5 @@ def choose_loss(sub_loss_cfg):
 
     else:
         raise NotImplementedError(
-            f"Invalid loss type '{loss_type}'. Only SoftIoULoss, DiceLoss, BceLoss, L1Loss, IBLoss, EdgeLoss, SLSIoULoss, and MTWHLoss are supported.")
+            f"Invalid loss type '{loss_type}'. Only SoftIoULoss, DiceLoss, BceLoss, L1Loss, SLSIoULoss, and MTWHLoss are supported.")
     return criterion

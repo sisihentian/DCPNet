@@ -279,17 +279,17 @@ def main(args):
         if epoch % trainer.save_interval == 0:
             trainer.save_model(epoch)
         # val
-        if epoch >= 30 and epoch % trainer.val_interval == 0:  # for MIST
-            # if epoch >= 10 and epoch % trainer.val_interval == 0:  # for NUDT-MIRSDT
-            trainer.validate(epoch, split='all')
-            # trainer.validate(epoch, split='hard')
+        # if epoch >= 30 and epoch % trainer.val_interval == 0:  
+        #     # if epoch >= 10 and epoch % trainer.val_interval == 0:  # for NUDT-MIRSDT
+        #     trainer.validate(epoch, split='all')
+        #     # trainer.validate(epoch, split='hard')
 
 
 
 def args_parser():
-    parser = argparse.ArgumentParser(description='PyTorch SIFA_GF_IRSDT Training')
+    parser = argparse.ArgumentParser(description='PyTorch DCPNet_NUDTMIRSDT Training')
     parser.add_argument('--config', type=str,
-                        default='./configs/multiframe/SIFANet/train_DCPNet_NUDTMIRSDT.yaml',
+                        default='./configs/multiframe/DCPNet/train_DCPNet_NUDTMIRSDT.yaml',
                         help='path to config file')
     parser.add_argument('--seed', type=int, default=0, help='random seed')
     parser.add_argument('--device', type=str, default='cuda', help='device (use cuda or cpu)')

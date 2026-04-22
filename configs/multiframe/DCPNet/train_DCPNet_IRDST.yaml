@@ -13,11 +13,7 @@ model:
       step_interval: epoch  # iter or epoch (every iter or every epoch to update once)
       milestones: [ 32, 44 ]  # [ 24, 33 ]  [ 32, 44 ]
       gamma: 0.1
-#    scheduler:
-#      type: StepLR  # [LambdaLR, StepLR, MultiStepLR, CosineAnnealingLR]
-#      step_interval: epoch  # iter or epoch (every iter or every epoch to update once)
-#      step_size: 10  # 5, 10
-#      gamma: 0.5
+
   loss:
     num_preds: 1  # number of predicted masks (default 1, when using deep supervision > 1)
     loss_1:
@@ -28,9 +24,9 @@ model:
 
 dataset:
   name: IRDST  # [MIST, NUDT-MIRSDT，TSIRMT]
-  root: /media/kou/Data2/zmh/dataset/IRDST  # data root path
+  root: /dataset/IRDST  # data root path
   num_inputs: 5  # number of input frames
-  img_size: [ 400, 400 ]  # image size
+  img_size: [ 384, 384 ]  # image size
   frame_padding: False
   data_aug: # data augmentation options
     random_flip: True
@@ -44,7 +40,7 @@ train:
   exp_name: model_DCPNet-IRDST  # experiment name (as well as the root for saving results)
   batch_size: 16  # total batch size of all gpus, 12, 16
   num_workers: 16  # number of data loading workers
-  total_epochs: 200  # number of total epochs to run, 48, 50
+  total_epochs: 48  # number of total epochs to run, 48, 50
   log_interval: 50  # default 50 iters
   save_interval: 1  # default 1 epoch
   val_interval: 1  # default 1 epoch

@@ -13,11 +13,7 @@ model:
       step_interval: epoch  # iter or epoch (every iter or every epoch to update once)
       milestones: [ 32, 44 ]  # [ 24, 33 ]  [ 32, 44 ]
       gamma: 0.1
-#    scheduler:
-#      type: StepLR  # [LambdaLR, StepLR, MultiStepLR, CosineAnnealingLR]
-#      step_interval: epoch  # iter or epoch (every iter or every epoch to update once)
-#      step_size: 5  # 3
-#      gamma: 0.5
+
   loss:
     num_preds: 1  # number of predicted masks (default 1, when using deep supervision > 1)
     loss_1:
@@ -25,15 +21,11 @@ model:
       weight: 1
       smooth: 1
       reduction: mean
-#    loss_2:
-#      type: IBLoss
-#      weight: 0.05
-#      temperature: 1
-#      reduction: mean
+
 
 dataset:
   name: NUDT-MIRSDT  # [MIST, NUDT-MIRSDT]
-  root: /media/kou/Data1/gr/Deep-MIST/data/NUDT-MIRSDT  # data root path
+  root: /dataset/NUDT-MIRSDT  # data root path
   full_supervision: True
 
 train:
